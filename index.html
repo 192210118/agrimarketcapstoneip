@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimarket Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Welcome to Agrimarket</h2>
+        
+        <!-- Farmer Login Form -->
+        <div class="login-box">
+            <h3>Farmer Login</h3>
+            <form id="farmer-login" onsubmit="return login('farmer')">
+                <input type="text" id="farmer-username" placeholder="Enter Username" required><br>
+                <input type="password" id="farmer-password" placeholder="Enter Password" required><br>
+                <button type="submit">Login as Farmer</button>
+            </form>
+        </div>
+
+        <!-- Customer Login Form -->
+        <div class="login-box">
+            <h3>Customer Login</h3>
+            <form id="customer-login" onsubmit="return login('customer')">
+                <input type="text" id="customer-username" placeholder="Enter Username" required><br>
+                <input type="password" id="customer-password" placeholder="Enter Password" required><br>
+                <button type="submit">Login as Customer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
