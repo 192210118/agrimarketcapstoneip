@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Or the branch you are using for deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js (if your project requires Node.js)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Replace with your Node.js version, if needed
+
+      - name: Install dependencies (if any)
+        run: npm install  # Run this if you have dependencies like npm/yarn
+
+      - name: Build the site (optional, if you use a build process)
+        run: npm run build  # This step is optional if you're using a build process like webpack
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # GitHub Pages deployment branch
+          folder: dist  # The folder containing the built files (e.g., 'dist', 'public', or 'docs')
+
+      - name: Set up GitHub Pages (if needed)
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
