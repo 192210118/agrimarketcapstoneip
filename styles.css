@@ -60,6 +60,12 @@ button:hover {
     gap: 15px;
 }
 
+#cart-list {
+    margin-top: 20px;
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+}
+
 .product-card {
     width: 200px;
     padding: 10px;
