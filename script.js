@@ -52,13 +52,15 @@ function displayProducts() {
             <img src="${product.image}" alt="${product.name}">
             <h4>${product.name}</h4>
             <p>$${product.price}</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">Add to Cart</button>
         `;
         productList.appendChild(productCard);
     });
 }
 
-// Call the displayProducts function when the page loads for customer dashboard
-if (window.location.pathname === '/customer-dashboard.html') {
-    displayProducts(); // Show products on customer dashboard
-}
+// Function to add product to the cart
+function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the product to the cart
+    cart.push({ name, price, image
